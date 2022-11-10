@@ -207,7 +207,7 @@
               {
                 player.y-=player.speed;
               }
-              if(keys.ArrowDown && player.y<road.bottom-150)
+              if(keys.ArrowDown && player.y<road.bottom-130)
               {
                 player.y+=player.speed;
               }
@@ -215,7 +215,7 @@
               {
                 player.x-=player.speed;
               }
-              if(keys.ArrowRight && player.x<(road.width-100))
+              if(keys.ArrowRight && player.x<(road.width-65))
               {
                 player.x+=player.speed;
               }
@@ -223,17 +223,22 @@
               car.style.left=player.x+ "px";    
               window.requestAnimationFrame(gamePlay);
               player.score++;
+              if(player.score>player.MaxScore)
+                  player.MaxScore++;
+              score.innerText="High-Score:"+player.MaxScore+"\nYour Score:  "+player.score; 
               score.innerText="Score:  "+player.score;
-              if(player.score>1500)
+             if(player.score>1800)
                  player.speed=16;  
-              if(player.score>900&& player.score<1500)
+              if(player.score>1200&& player.score<1800)
                   player.speed=12;    
-              if(player.score>500&& player.score<900)
+              if(player.score>800&& player.score<1200)
                     player.speed=9; 
+              if(player.score>400&& player.score<800)
+                    player.speed=7;       
               if(player.score>200&& player.score<400)
                     player.speed=5; 
               if(player.score>100&& player.score<200)
-                    player.speed=4;                   
+                    player.speed=4;                        
               
                
            }  
@@ -245,6 +250,7 @@
             startscreen.classList.add('hide');
             gamearea.innerHTML="";
             player.start=true;
+            player.speed=3; 
             player.score=0;
             for(x=0;x<7;x++)
             {
