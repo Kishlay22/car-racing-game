@@ -149,8 +149,8 @@
         {
             apos=a.getBoundingClientRect();
             bpos=b.getBoundingClientRect();
-            return !((apos.top-10>bpos.bottom)||(apos.bottom-10<bpos.top)||
-            ((apos.right-10px)<bpos.left)||((apos.left-10px)>bpos.right))
+            return !(apos.top>bpos.bottom)||(apos.bottom<bpos.top)||
+            ((apos.right)<bpos.left)||((apos.left)>bpos.right))
         }
         
         
