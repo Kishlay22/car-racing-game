@@ -58,9 +58,9 @@
              left:20px;
              background-color: rgb(0, 255, 213);
              color: rgb(255, 60, 0);
-             width: 300px;
+             width: 350px;
              line-height: 60px;
-             border-radius: 0 0 80px 80px;
+             border-radius:30px;
              text-align: center;
              font-family: 'Combo', cursive;
              font-size:1.4em;
@@ -149,8 +149,8 @@
         {
             apos=a.getBoundingClientRect();
             bpos=b.getBoundingClientRect();
-            return !(apos.top>bpos.bottom)||(apos.bottom<bpos.top)||
-            ((apos.right)<bpos.left)||((apos.left)>bpos.right))
+            return !((apos.top>bpos.bottom)||(apos.bottom<bpos.top)||
+            (apos.right<bpos.left)||(apos.left>bpos.right))
         }
         
         
@@ -170,7 +170,7 @@
         function endgame()
         {
           player.start=false;
-          player.speed=3; 
+          
           startscreen.classList.remove('hide');
           startscreen.innerHTML="Game Over<br> Your Total Score is:"+(player.score+1)+".<br>Press Here To Restart"
           
@@ -226,7 +226,7 @@
               if(player.score>player.MaxScore)
                   player.MaxScore++;
               score.innerText="High-Score:"+player.MaxScore+"\nYour Score:  "+player.score;
-             if(player.score>1800)
+              if(player.score>1800)
                  player.speed=16;  
               if(player.score>1200&& player.score<1800)
                   player.speed=12;    
@@ -237,7 +237,7 @@
               if(player.score>200&& player.score<400)
                     player.speed=5; 
               if(player.score>100&& player.score<200)
-                    player.speed=4;                        
+                    player.speed=4;                   
               
                
            }  
