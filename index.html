@@ -121,7 +121,7 @@
         const startscreen=document.querySelector('.startscreen');
         const gamearea=document.querySelector(".gamearea");
         let keys={ArrowUp:false,ArrowDown:false,ArrowLeft:false,ArrowRight:false};
-        const player={start:false,speed:3,score:0}
+        const player={start:false,speed:3,score:0,MaxScore:0}
         document.addEventListener('keydown',keyDown);
         document.addEventListener('keyup',keyUp);
         startscreen.addEventListener('click',Start);
